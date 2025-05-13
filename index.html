@@ -3,7 +3,7 @@
     <head>
         <!-- Essential Viewport and Character Set -->
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Primary SEO Meta Tags -->
         <title>Euphoria - Premium eCommerce Shopping Experience</title>
@@ -28,8 +28,65 @@
 
         <!-- Favicon References -->
         <link rel="icon" href="/assets/images/Logo.svg">
+
+        <!-- CSS Stylesheets -->
+        <link rel="stylesheet" href="/assets/css/index.css">
+        <script src="/assets/js/index.js"></script>
     </head>
     <body>
-        <h1>Welcome to euphoria</h1>
+
+        <!-- Theme toggle button -->
+        <div class="theme-toggle" id="themeToggle">
+            <div class="theme-icons">
+                <span>☀️</span>
+                <span>🌙</span>
+            </div>
+        </div>
+        <!-- Theme toggle button -->
+        <!-- Header -->
+        <header>
+            <section class="wrapper">
+                <section class="header-styles">
+                <div class="left">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <img src="/assets/images/Logo.svg" alt="Euphoria Logo">
+                        </a>
+                    </h1>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <nav class="sections">
+                        <ul>
+                            <li><a href="#" class="section-link">Shop</a></li>
+                            <li><a href="#" class="section-link">Men</a></li>
+                            <li><a href="#" class="section-link">Women</a></li>
+                            <li><a href="#" class="section-link">Combos</a></li>
+                            <li><a href="#" class="section-link">Joggers</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- header > .wrapper > .header-styles > .left  -->
+                <div class="right">
+                    <div class="search">
+                        <img src="/assets/images/search.svg" alt="Search Icon">
+                        <input type="text" placeholder="Search">
+                    </div>
+                    <div class="profile-cart">
+                        <ul>
+                            <li><a href="#" data-info="Add To your wishlist" class="components"><img src="/assets/images/wishlist.svg" alt="wish list"></a></li>
+                            <li><a href="#" data-info="Manage Profile" class="components"><img src="/assets/images/account.svg" alt="Account"></a></li>
+                            <li><a href="#" data-info="Add Item To your cart" class="components"><img src="/assets/images/cart.svg" alt="Cart"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- header > .wrapper > > .header-styles > .right  -->
+                 </section>
+            </section>
+            <!-- header > .wrapper -->
+        </header>
+        <!-- header -->
     </body>
 </html>
