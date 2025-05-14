@@ -12,7 +12,7 @@ html {
 /* Theme toggle styles */
 .theme-toggle {
     position: fixed;
-    top: 20px;
+    top: 10px;
     right: 20px;
     z-index: 1000;
     width: 60px;
@@ -46,7 +46,8 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 6px;
+    margin: 0 auto;
+    padding: 0 1px;
 }
 
 .theme-toggle .theme-icons span {
@@ -66,8 +67,8 @@ html {
 
 /* Dark theme */
 [data-theme="dark"] {
-    --link-color: #B8B5B6;
-    --link-dark-color: #F0F0F0;
+    --link-color: #aca6a8;
+    --link-dark-color: #ffffff;
     --white: #121212;
     --special-rect: #9F5BFF;
     --shade-color: #2A2A2A;
@@ -90,6 +91,8 @@ body {
     width: 1440px;
     margin: 0 auto;
     font-family: poppins, sans-serif;
+    scroll-behavior: smooth;
+    transition: all 1s ease;
 }
 ul,
 ol {
@@ -149,6 +152,26 @@ header .header-styles .left .sections ul {
 header .header-styles .left .sections ul li {
     width: 100%;
 }
+header .header-styles .left .sections ul li .section-link {
+    /* padding: 1rem 0; */
+    font-weight: 600;
+    text-align: center;
+    border-radius: 5px;
+    transition: all .7s ease-in-out;
+}
+header .header-styles .left .sections ul li .section-link.active {
+    color: var(--link-dark-color); 
+    transition: all 0.3s ease-in-out;
+}
+header .header-styles .left .sections ul li .section-link.active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: var(--link-dark-color);
+    border-radius: 5px;
+    margin-top: .3rem;
+}
 header .header-styles .right {
     flex: .4;
     justify-content: space-between;
@@ -192,7 +215,7 @@ header .header-styles .right .profile-cart ul li a {
     border-radius: .5rem;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
     padding: .8rem;
-    transition: all 0.3s ease-in-out;   
+    transition: all .7s ease-in-out;   
 }
 header .header-styles .right .profile-cart ul li a:hover {
     transform: perspective(1000px) rotateY(360deg);
@@ -203,7 +226,9 @@ header .header-styles .right .profile-cart ul li a img {
     height: undefined;
     aspect-ratio: 1;
 }
-
+header .header-styles .left .sections .menu-close-btn {
+        display: none;
+}
 
 
 /* Responsive styles */
@@ -217,102 +242,62 @@ header .header-styles .right .profile-cart ul li a img {
     }
 }
 
-/* Tablet styles */
-@media screen and (max-width: 992px) {
+/* Large tablet styles */
+@media screen and (max-width: 1140px) {
     header .header-styles {
+        flex-wrap: wrap;
         flex-direction: column;
         height: auto;
         padding: 1rem 0;
     }
-    
-    header .header-styles .left, 
+     
+    header .header-styles .left {
+        flex: 1;
+        width: 100%;
+        justify-content: flex-start;
+        flex: 1;
+    }
+    header .header-styles .left .sections {
+        justify-self: flex-start;
+        margin: 0 auto;
+    }
     header .header-styles .right {
         flex: 1;
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-end;
+        align-items: center;
     }
     
-    header .header-styles .left {
-        margin-bottom: 1rem;
+    header .header-styles .right .search {
+        justify-self: flex-end;
+        margin-right: 1rem;
+        padding:3rem auto; ;
     }
     
     header .header-styles .left .sections ul {
-        gap: 1.5rem;
+        gap: 2rem;
     }
     
     header .header-styles .right .search input {
-        width: 150px;
+        width: 200px;
     }
+}
+
+/* Tablet styles */
+@media screen and (max-width: 992px) {
+   
 }
 
 /* Mobile styles */
 @media screen and (max-width: 768px) {
-    header {
-        height: auto;
-    }
     
-    header .header-styles .left {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    header .header-styles .left h1.logo {
-        margin-bottom: 1rem;
-        padding-right: 0;
-    }
-    
-    header .header-styles .left .sections {
-        width: 100%;
-        overflow-x: auto;
-    }
-    
-    header .header-styles .left .sections ul {
-        gap: 1rem;
-        flex-wrap: nowrap;
-        padding-bottom: 0.5rem;
-        width: max-content;
-    }
-    
-    header .header-styles .right {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    header .header-styles .right .search {
-        width: 100%;
-    }
-    
-    header .header-styles .right .search input {
-        width: 100%;
-    }
-    
-    header .header-styles .right .profile-cart {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
     .theme-toggle {
         top: 10px;
         right: 10px;
     }
 }
-
-/* Small mobile styles */
-@media screen and (max-width: 480px) {
-    header .header-styles .left .sections ul {
-        gap: 0.8rem;
-    }
-    
-    header .header-styles .right .profile-cart ul {
-        gap: 0.5rem;
-    }
-    
-    header .header-styles .right .profile-cart ul li a {
-        width: 40px;
-        height: 40px;
-        padding: 0.6rem;
-    }
-    
+/* Medium mobile styles */
+@media screen and (max-width: 660px) {
     /* Add a mobile menu button */
     .mobile-menu-button {
         display: block;
@@ -324,8 +309,9 @@ header .header-styles .right .profile-cart ul li a img {
         padding: 0.5rem;
         border-radius: 5px;
         cursor: pointer;
+        transition: all 0.3s ease;
     }
-    
+
     /* Hide the desktop navigation */
     header .header-styles .left .sections {
         display: none;
@@ -343,12 +329,55 @@ header .header-styles .right .profile-cart ul li a img {
         z-index: 99;
         padding: 2rem;
     }
+    /* Close button for mobile menu */
+    .menu-close-btn {
+        display: none;
+        position: absolute;
+        top: 39px;
+        right: 14px;
+        font-size: 28px;
+        color: var(--link-dark-color);
+        cursor: pointer;
+        z-index: 101;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 50%;
+        background-color: var(--shade-color);
+        box-shadow: 0 0px 2px var(--link-dark-color);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .menu-close-btn:hover {
+        box-shadow: 0 0px 6px var(--link-dark-color);
+        transform: scale(1.1);
+    }
+
+    .menu-close-btn:active {
+        border: 2px solid var(--link-dark-color);
+        background-color: var(--white);
+        color: var(--link-dark-color);
+        transform: scale(0.9);
+        transition: all 0.1s ease-in-out;
+    }
+
+    header .header-styles .left .sections.active .menu-close-btn {
+        display: block;
+    }
     
     header .header-styles .left .sections.active ul {
         flex-direction: column;
         gap: 1.5rem;
         align-items: center;
-        padding-top: 3rem;
+        padding: 2rem 1.3rem;
+        border-radius: 1rem;
+        width: 50%;
+        position: fixed;
+        top: 40px;
+        right: 15px;
+        border-top-right-radius: 17px;
+        box-shadow: 0 0px 2px var(--link-dark-color);
     }
     
     header .header-styles .left .sections.active ul li a {
@@ -369,8 +398,8 @@ header .header-styles .right .profile-cart ul li a img {
     }
 }
 
-/* Add hamburger menu functionality */
-@media screen and (max-width: 480px) {
+/* Small mobile styles */
+@media screen and (max-width: 660px) {
     /* Create hamburger button styles and overlay menu */
     .hamburger {
         display: block;
@@ -420,6 +449,47 @@ header .header-styles .right .profile-cart ul li a img {
         top: 8px;
         transform: rotate(-135deg);
     }
+    header .header-styles .left .sections ul {
+        gap: 0.8rem;
+    }
+    
+    header .header-styles .right .profile-cart ul {
+        gap: 0.5rem;
+    }
+    
+    header .header-styles .right .profile-cart ul li a {
+        width: 40px;
+        height: 40px;
+        padding: 0.6rem;
+    }
+    header .header-styles .left .sections ul li .section-link.active::after {
+        margin-top: 1rem;
+    }
+}
+
+/* Add hamburger menu functionality */
+@media screen and (max-width: 480px) {
+    
+}
+
+@media screen and (max-width: 360px) {
+    header .header-styles .left .sections ul {
+        gap: .5rem;
+    }
+    
+    header .header-styles .right {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    header .header-styles .right .profile-cart {
+        margin-top: 1rem;
+    }
+    
+    header .header-styles .right .profile-cart ul li a {
+        padding: .6rem;
+    }
+    
 }
 
 /* Additional improvements for accessibility */
