@@ -88,11 +88,10 @@ html {
 }
 body {
     background-color: var(--white);
-    width: 1440px;
-    margin: 0 auto;
     font-family: poppins, sans-serif;
     scroll-behavior: smooth;
     transition: all 1s ease;
+    overflow-x: hidden;
 }
 ul,
 ol {
@@ -108,8 +107,8 @@ a {
 a:hover {
     color: var(--link-dark-color);
 }
-text {
-    color: var(--link-dark-color);
+.text {
+    color: var(--white);
     font-size: 1.2rem;
 }
 
@@ -117,6 +116,9 @@ text {
 /* header styles */
 header {
     height: 108px;
+    width: 1440px;
+    margin: 0 auto;
+    z-index: 100;
 } 
 .wrapper {
     width: 1240px;
@@ -231,14 +233,165 @@ header .header-styles .left .sections .menu-close-btn {
 }
 
 
+/* banner styles */
+.banner {
+    position: relative;
+    height: 750px;
+    width: 100%;
+    margin-bottom: 2rem;
+    background: url('../images/bg-1.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+}
+.banner .banner-content {
+    width: 50%;
+    padding: 60px;
+    z-index: 1;
+    margin-left: 5%;
+    transition: all 0.3s ease-in-out;
+}
+
+.banner .banner-content .banner-category {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 3rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.banner .banner-content .banner-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    max-width: 65%;
+    margin-bottom: 3rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.banner .banner-content .banner-subtitle {
+    font-size: 24px;
+    font-weight: 550;
+    margin-bottom: 2.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.banner .banner-content .shop-now-btn {
+    background-color: var(--white);
+    color: var(--link-dark-color);
+    border: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.banner .banner-content .shop-now-btn:hover {
+    background-color: var(--link-dark-color);
+    color: var(--white);
+    transform: scale(1.05);
+}
+.banner .banner-content .shop-now-btn:active {
+    transform: scale(0.95);
+    transition: all 0.1s ease;
+}
+
+.banner .banner-nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+.banner .banner-nav .nav-arrow {
+    background: var(--white);
+    color: var(--link-dark-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.7s ease;
+    font-size: 30px;
+    border: none;
+    outline: none;
+}
+
+.banner .banner-nav .nav-arrow:hover {
+    background: var(--link-dark-color);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+.banner .banner-nav .nav-arrow:active {
+    transform: scale(0.95);
+    transition: all .2s ease;
+    box-shadow: 0 0 0 10px var(--special-rect);
+    animation: border-spread .4s ease-in-out forwards;
+}
+
+@keyframes border-spread {
+    to {
+        box-shadow: 0 0 0 2px var(--shade-color);
+    }
+}
+
+
+.banner .banner-indicator {
+    position: relative;
+    bottom: -40%;
+    left: -40px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+
+.banner .banner-indicator .indicator-dot {
+    width: 40px;
+    height: 12px;
+    background: var(--white);
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.banner .banner-indicator .indicator-dot:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.banner .banner-indicator .indicator-dot:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+
+.banner .banner-indicator .indicator-dot.active {
+    background: var(--link-dark-color);
+}
+
+
 /* Responsive styles */
 @media screen and (max-width: 1440px) {
-    body {
-        width: 100%;
+    .banner {
+        height: 700px;
+    }
+    .banner .banner-content .banner-title {
+        font-size: 3.5rem;
+        max-width: 70%;
     }
     
-    .wrapper {
-        width: 90%;
+    .banner .banner-content .banner-subtitle {
+        font-size: 22px;
     }
 }
 
