@@ -116,12 +116,14 @@ a:hover {
 /* header styles */
 header {
     height: 108px;
-    width: 1440px;
+    width: 100%;
+    max-width: 1440px;
     margin: 0 auto;
     z-index: 100;
 } 
 .wrapper {
-    width: 1240px;
+    width: 90%;
+    max-width: 1240px;
     margin:0 auto;
 }
 header .header-styles, header .header-styles div, header .header-styles div ul {
@@ -147,6 +149,9 @@ header .header-styles .left h1.logo img {
 header .header-styles .left .sections {
     justify-self: center;
     margin: 0 auto;
+}
+header .header-styles .left .sections.sections.active {
+    z-index: 99;
 }
 header .header-styles .left .sections ul {
     gap: 3rem;
@@ -177,6 +182,7 @@ header .header-styles .left .sections ul li .section-link.active::after {
 header .header-styles .right {
     flex: .4;
     justify-content: space-between;
+    z-index: 12;
 }
 header .header-styles .right .search {
     background: var(--shade-color);
@@ -443,7 +449,6 @@ header .header-styles .left .sections .menu-close-btn {
 
 /* Mobile styles */
 @media screen and (max-width: 768px) {
-    
     .theme-toggle {
         top: 10px;
         right: 10px;
@@ -474,20 +479,26 @@ header .header-styles .left .sections .menu-close-btn {
     header .header-styles .left .sections.active {
         display: block;
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
+        width: 50%;
+        height: 300px;
+        border: 1px solid var(--link-dark-color);
         background: var(--white);
         z-index: 99;
         padding: 2rem;
+        padding: 2rem 1.3rem;
+        border-radius: 1rem;
+        position: fixed;
+        top: 100px;
+        right: 15px;
+        border-top-right-radius: 17px;
+        box-shadow: 0 0px 10px var(--link-dark-color);
     }
     /* Close button for mobile menu */
     .menu-close-btn {
         display: none;
         position: absolute;
-        top: 39px;
-        right: 14px;
+        top: -15px;
+        left: -15px;
         font-size: 28px;
         color: var(--link-dark-color);
         cursor: pointer;
@@ -523,14 +534,6 @@ header .header-styles .left .sections .menu-close-btn {
         flex-direction: column;
         gap: 1.5rem;
         align-items: center;
-        padding: 2rem 1.3rem;
-        border-radius: 1rem;
-        width: 50%;
-        position: fixed;
-        top: 40px;
-        right: 15px;
-        border-top-right-radius: 17px;
-        box-shadow: 0 0px 2px var(--link-dark-color);
     }
     
     header .header-styles .left .sections.active ul li a {
@@ -548,6 +551,12 @@ header .header-styles .left .sections .menu-close-btn {
     
     [data-theme="dark"] .theme-toggle::before {
         left: 27px;
+    }
+    header .header-styles .right {
+        position: absolute;
+        top: 50px;
+        right: 100px;
+        z-index: 100;
     }
 }
 
@@ -620,9 +629,72 @@ header .header-styles .left .sections .menu-close-btn {
     }
 }
 
+
 /* Add hamburger menu functionality */
+@media screen and (max-width: 590px) {
+    header .header-styles .right  {
+        display: none;
+        flex-direction: column;
+        top: 380px;
+        width: 50%;
+        right: 0;
+    }
+    header .header-styles .right.active {
+        display: block;
+    }
+    header .header-styles .right.active .search {
+        display: none;
+    }
+    header .header-styles .right.active .profile-cart {
+        margin-top: 1.2rem;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+    header .header-styles .right.active .profile-cart ul {
+        width: 90%;
+        justify-content: space-evenly;
+    }
+    header .header-styles .right.active .profile-cart ul li a {
+        padding: .8rem;
+    }
+    header .header-styles .left .sections.active {
+        height: 400px;
+    }
+}
+
 @media screen and (max-width: 480px) {
+    header .header-styles .left .sections.active {
+        width: 70%;
+        padding: 2rem 1.3rem;
+        border-radius: 1rem;
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        border-top-right-radius: 17px;
+        box-shadow: 0 0px 10px var(--link-dark-color);
+    }
     
+    header .header-styles .left .sections.active ul {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+    
+    header .header-styles .left .sections.active ul li a {
+        font-size: 1.2rem;
+    }
+    header .header-styles .right.active {
+        width: 70%;
+        right: 20px;
+    }
+    header .header-styles .right.active .search input {
+        width: 210px;
+        align-self: center;
+        justify-self: start;
+    }
 }
 
 @media screen and (max-width: 360px) {
@@ -630,17 +702,24 @@ header .header-styles .left .sections .menu-close-btn {
         gap: .5rem;
     }
     
-    header .header-styles .right {
+    header .header-styles .right.active {
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
     }
-    header .header-styles .right .profile-cart {
+    header .header-styles .right.active .profile-cart {
         margin-top: 1rem;
     }
     
-    header .header-styles .right .profile-cart ul li a {
+    header .header-styles .right.active .profile-cart ul li a {
         padding: .6rem;
+    }
+    header .header-styles .right.active  {
+        width: 60%;
+        right: 30px;
+    }
+    header .header-styles .right.active .search input {
+        width: 100px;    
     }
     
 }

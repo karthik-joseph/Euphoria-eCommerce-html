@@ -4,6 +4,7 @@
         const mobileNav = document.querySelector('.sections');
         const menuCloseBtn = document.querySelector('.menu-close-btn');
         const sectionLink = document.querySelectorAll('.sections .section-link');
+        const headerRight = document.querySelector('.header-styles .right');
 
 
         // Add event listeners to each section link 
@@ -30,6 +31,7 @@
             hamburger.classList.add('open');
             mobileNav.classList.add('active');
             overlay.classList.add('active');
+            headerRight.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
         }
         
@@ -38,6 +40,7 @@
             hamburger.classList.remove('open');
             mobileNav.classList.remove('active');
             overlay.classList.remove('active');
+            headerRight.classList.remove('active');
             document.body.style.overflow = ''; // Re-enable scrolling
         }
         
@@ -92,5 +95,33 @@
             if (window.innerWidth > 480 && mobileNav.classList.contains('active')) {
                 closeMobileMenu();
             }
+        });
+
+
+        // Smooth scrolling for anchor links
+        const smoothScrollLinks = document.querySelectorAll('.section-link');
+        smoothScrollLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+
+        // popup message for components when clicking using data-info attribute
+        const infoButtons = document.querySelectorAll('[data-info]');
+        infoButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const message = this.getAttribute('data-info');
+                alert(message);
+            });
         });
     });
