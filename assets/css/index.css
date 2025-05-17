@@ -86,20 +86,6 @@ html {
 [data-theme="dark"] header .header-styles .right .search input::placeholder {
     color: #999;
 }
-
-/* scroll animation */
-.scroll-animation {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: all 1s ease-in-out;
-}
-.scroll-animation.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-
 body {
     background-color: var(--white);
     font-family: poppins, sans-serif;
@@ -426,7 +412,7 @@ header .header-styles .left .sections .menu-close-btn {
     padding:3rem 2rem;
     border-radius: 1rem;
     box-shadow: 0 0 10px var(--link-dark-color);
-    transition: all .7s ease-in-out;
+    transition: all .3s ease-in-out;
     
 }
 #deals .deal-container .deal-section:hover{
@@ -486,7 +472,13 @@ header .header-styles .left .sections .menu-close-btn {
 
 /* New Arrivals */
 #new-arrivals {
-    margin: 5rem 0;
+  position: relative;
+  padding: 60px 0;
+  overflow: hidden;
+  margin: 5rem 0;
+}
+.new-arrivals-container {
+  position: relative;
 }
 #new-arrivals .new-arrivals-container h2 {
     font-size: 2rem;
@@ -505,26 +497,131 @@ header .header-styles .left .sections .menu-close-btn {
     border-radius: 5px;
     margin-right: 1rem;
 }
-#new-arrivals .new-arrivals-container .showcase-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
+.showcase-container {
+  display: flex;
+  flex-wrap: nowrap !important; 
+  justify-content: flex-start;
+  gap: 20px;
+  position: relative;
+  transform: translateX(0); 
+  will-change: transform;
+  scroll-behavior: smooth;
+  /* margin: 0 40px; */
 }
-#new-arrivals .navigation {
-   position: relative;
-   bottom: 0;
-   width: 100%;
-   height: 100%;
-   z-index: 12;
-   display: flex;
-   justify-content: space-between;
+.group {
+  min-width: 240px;
+  width: calc(25% - 15px); /* Adjust based on how many items you want visible at full width */
+  flex: 0 0 auto !important; /* Override any flex growth/shrink */
 }
-#new-arrivals .navigation .next {
+
+.group:hover {
+  transform: translateY(-10px);
+}
+
+.showcase-image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px var(--link-dark-color);
+}
+
+.showcase-title {
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--link-dark-color);
+  text-align: center;
+}
+
+/* Navigation Arrows */
+.navigation {
+  position: absolute;
+  width: 100%;
+  top: 51.5%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.nav-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 1px 2px var(--link-dark-color);
+  transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+  background-color: var(--link-color);
+  transform: scale(1.1);
+}
+.nav-arrow:active {
+    transform: scale(.9);
+}
+.nav-arrow.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.nav-arrow.disabled:hover {
+  background-color: transparent;
+  transform: scale(1);
+}
+
+.nav-arrow img {
+  width: 20px;
+  height: 20px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
 }
 
 
+/* Clearly visible disabled state */
+.nav-arrow.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f0f0f0;
+  box-shadow: none !important;
+}
+
+.nav-arrow.disabled:hover {
+  background-color: #f0f0f0 !important;
+  transform: scale(1) !important;
+}
+
+/* Fix any possible transform conflicts with hover effects */
+.group {
+  transition: transform 0.3s ease;
+}
+
+.group:hover {
+  transform: translateY(-10px);
+}
+
+/* For debugging - add these classes to quickly identify issues */
+.debug-highlight {
+  outline: 2px solid red !important;
+}
+
+.debug-active {
+  background-color: rgba(255, 0, 0, 0.2) !important;
+}
 
 /* New Arrivals end */
 
@@ -1093,4 +1190,41 @@ header .header-styles .left .sections .menu-close-btn {
     header .header-styles .right .profile-cart ul li a {
         transition: none;
     }
+}
+
+/* scroll animation */
+.scroll-animation {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 1s ease-in-out !important;
+}
+.scroll-animation.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Media queries for responsive design for new-arrivals */
+@media (max-width: 1200px) {
+  .group {
+    width: calc(33.333% - 15px);
+  }
+}
+
+@media (max-width: 992px) {
+  .group {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 576px) {
+  .group {
+    width: calc(100% - 20px);
+  }
+  
+  .navigation {
+    padding: 0 20px;
+  }
+  .showcase-container {
+    margin: 0 20px;
+  }
 }
