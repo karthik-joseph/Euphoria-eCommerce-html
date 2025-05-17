@@ -6,7 +6,6 @@
         const sectionLink = document.querySelectorAll('.sections .section-link');
         const headerRight = document.querySelector('.header-styles .right');
 
-
         // Add event listeners to each section link 
         sectionLink.forEach(function(link) {
             link.addEventListener('click', function() {
@@ -124,4 +123,36 @@
                 alert(message);
             });
         });
+
+         // scroll animation for the sections
+        const scrollAnimation = document.querySelectorAll('.scroll-animation');
+
+
+        // Function to check if an element is in the viewport
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+                rect.bottom >= 0
+            );
+        }
+
+        // Function to add the 'active' class to elements in the viewport
+        function handleScrollAnimation() {
+            scrollAnimation.forEach(function(el) {
+                if (isElementInViewport(el)) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                }
+            });
+        }
+
+        // Initial check for scroll animation
+        handleScrollAnimation();
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScrollAnimation);
+
+        // Trigger once on load to check for elements already in viewport
+        window.addEventListener('load', handleScrollAnimation);
     });
