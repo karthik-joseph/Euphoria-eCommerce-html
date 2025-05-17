@@ -1208,11 +1208,20 @@ header .header-styles .left .sections .menu-close-btn {
   .group {
     width: calc(33.333% - 15px);
   }
+  #new-arrivals .new-arrivals-container h2 {
+    font-size: 1.6rem;
+  }
 }
 
 @media (max-width: 992px) {
   .group {
     width: calc(50% - 10px);
+  }
+  #new-arrivals .new-arrivals-container h2 {
+    font-size: 1.4rem;
+  }
+  #new-arrivals{
+    margin: 3rem 0;
   }
 }
 
@@ -1220,6 +1229,9 @@ header .header-styles .left .sections .menu-close-btn {
   .group {
     width: calc(100% - 20px);
   }
+  #new-arrivals .new-arrivals-container h2 {
+    font-size: 1.2rem;
+  } 
   
   .navigation {
     padding: 0 20px;
