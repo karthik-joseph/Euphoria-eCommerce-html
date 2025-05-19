@@ -92,6 +92,8 @@ body {
     scroll-behavior: smooth;
     transition: all 1s ease;
     overflow-x: hidden;
+    max-width: 1540px;
+    margin: 0 auto;
 }
 ul,
 ol {
@@ -738,11 +740,14 @@ header .header-styles .left .sections .menu-close-btn {
 }
 
 #fashion .fashion-container .shop-button:hover {
-    background-color: #f8f8f8;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: var(--link-dark-color);
+    color: var(--white);
+    transform: scale(1.05);
 }
-
+#fashion .fashion-container .shop-button:active {
+    transform: scale(0.95);
+    transition: all 0.1s ease;
+}
 /* Overlay for dark background */
 #fashion .fashion-container .left-section::before {
     content: '';
@@ -755,7 +760,6 @@ header .header-styles .left .sections .menu-close-btn {
     z-index: 1;
 }
 /* Responsive styles */
-
 @media screen and (max-width: 992px) {
     #fashion .fashion-container {
         height: auto;
