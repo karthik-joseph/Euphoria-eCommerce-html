@@ -623,7 +623,202 @@ header .header-styles .left .sections .menu-close-btn {
   background-color: rgba(255, 0, 0, 0.2) !important;
 }
 
+
+/* Media queries for responsive design for new-arrivals */
+@media (max-width: 1200px) {
+  .group {
+    width: calc(33.333% - 15px);
+  }
+  #new-arrivals .new-arrivals-container h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .group {
+    width: calc(50% - 10px);
+  }
+  #new-arrivals .new-arrivals-container h2 {
+    font-size: 1.4rem;
+  }
+  #new-arrivals{
+    margin: 3rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .group {
+    width: calc(100% - 20px);
+  }
+  #new-arrivals .new-arrivals-container h2 {
+    font-size: 1.2rem;
+  } 
+  
+  .navigation {
+    padding: 0 20px;
+  }
+  .showcase-container {
+    margin: 0 20px;
+  }
+}
 /* New Arrivals end */
+
+/* fashion */
+#fashion {
+    margin: 4rem 0;
+    display: flex;
+}
+#fashion .fashion-container {
+    display: flex;
+    height: 600px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 8px;
+}
+#fashion .fashion-container .left-section {
+   flex: 1;
+    background: url('../images/bg-4.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#fashion .fashion-container .right-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#fashion .fashion-container .right-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+ /* Content styling */
+#fashion .fashion-container .left-section .content {
+    position: relative;
+    z-index: 2;
+    max-width: 80%;
+}
+
+#fashion .fashion-container .content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+#fashion .fashion-container .content p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+#fashion .fashion-container .shop-button {
+    display: inline-block;
+    background-color: white;
+    color: #333;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#fashion .fashion-container .shop-button:hover {
+    background-color: #f8f8f8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Overlay for dark background */
+#fashion .fashion-container .left-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+/* Responsive styles */
+
+@media screen and (max-width: 992px) {
+    #fashion .fashion-container {
+        height: auto;
+        flex-direction: column;
+    }
+    
+    #fashion .fashion-container .left-section, #fashion .fashion-container .right-section {
+        width: 100%;
+    }
+    
+    #fashion .fashion-container .left-section {
+        padding: 60px 40px;
+    }
+    
+    #fashion .fashion-container .content h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #fashion .fashion-container .content {
+        max-width: 100%;
+    }
+    
+    #fashion .fashion-container .content h2 {
+        font-size: 1.8rem;
+    }
+    
+    #fashion .fashion-container .content p {
+        font-size: 0.9rem;
+    }
+    
+    #fashion .fashion-container .left-section {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    #fashion {
+        border-radius: 0;
+    }
+    
+    #fashion .fashion-container .content h2 {
+        font-size: 1.5rem;
+    }
+    
+    #fashion .fashion-container .shop-button {
+        width: 100%;
+        padding: 10px 20px;
+    }
+    
+    #fashion .fashion-container .left-section {
+        padding: 30px 20px;
+    }
+}
+/* fashion end */
+
+
+
+
+
+
+
 
 /* Responsive styles */
 @media screen and (max-width: 1440px) {
@@ -947,6 +1142,9 @@ header .header-styles .left .sections .menu-close-btn {
 
 /* Add hamburger menu functionality */
 @media screen and (max-width: 590px) {
+    header {
+        padding: 0;
+    }
     header .header-styles .right  {
         display: none;
         flex-direction: column;
@@ -1201,42 +1399,4 @@ header .header-styles .left .sections .menu-close-btn {
 .scroll-animation.active {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Media queries for responsive design for new-arrivals */
-@media (max-width: 1200px) {
-  .group {
-    width: calc(33.333% - 15px);
-  }
-  #new-arrivals .new-arrivals-container h2 {
-    font-size: 1.6rem;
-  }
-}
-
-@media (max-width: 992px) {
-  .group {
-    width: calc(50% - 10px);
-  }
-  #new-arrivals .new-arrivals-container h2 {
-    font-size: 1.4rem;
-  }
-  #new-arrivals{
-    margin: 3rem 0;
-  }
-}
-
-@media (max-width: 576px) {
-  .group {
-    width: calc(100% - 20px);
-  }
-  #new-arrivals .new-arrivals-container h2 {
-    font-size: 1.2rem;
-  } 
-  
-  .navigation {
-    padding: 0 20px;
-  }
-  .showcase-container {
-    margin: 0 20px;
-  }
 }
