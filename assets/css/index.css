@@ -817,13 +817,145 @@ header .header-styles .left .sections .menu-close-btn {
 }
 /* fashion end */
 
+/* mens section */
+#mens {
+    margin: 4rem 0;
+}
+#mens .mens-container h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--link-dark-color);
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+}
+#mens .mens-container h2::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 30px;
+    background: var(--special-rect);
+    border-radius: 5px;
+    margin-right: 1rem;
+}
+#mens .mens-container .categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+#mens .mens-container .categories .category-container {
+    flex: 1;
+    min-width: 250px;
+    max-width: 280px;  
+    min-height: 350px; 
+    border-radius: 8px;
+    opacity: 0;
+    transform: rotateY(-90deg);
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                opacity 1s ease;
+            
+}
+#mens .mens-container .categories .category-container:nth-child(even) {
+    transform: rotateY(90deg);
+    transform-origin: right center;
+}
 
 
+/* Active state when animation should run */
+#mens .mens-container .categories .category-container.animate {
+    opacity: 1;
+    transform: rotateY(0);
+}
 
+/* Optional: Add some additional hover effects */
+#mens .mens-container .categories .category-container .img-container img {
+    transition: transform 0.5s ease;
+}
 
+#mens .mens-container .categories .category-container:hover .img-container img {
+    transform: scale(1.05);
+}
 
+#mens .mens-container .categories .category-container .arrow {
+    transition: transform 0.3s ease;
+}
 
+#mens .mens-container .categories .category-container:hover .arrow {
+    transform: translateX(5px);
+}
 
+/* Optional: Animation for the "Explore Now" link */
+#mens .mens-container .categories .explore-now {
+    position: relative;
+    display: inline-block;
+}
+
+#mens .mens-container .categories .explore-now::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+
+#mens .mens-container .categories .category-container:hover .explore-now::after {
+    width: 100%;
+}
+/*  */
+#mens .mens-container .categories .category-container:hover img {
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+#mens .mens-container .categories .category-container .img-container {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+#mens .mens-container .categories .category-container .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+#mens .mens-container .categories .category-container .category-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+#mens .mens-container .categories .category-container .category-content h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--link-dark-color);
+}
+#mens .mens-container .categories .category-container:hover .category-content {
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+}
+#mens .mens-container .categories .category-container .category-content a.explore-now {
+    background: none;
+    border: none;
+    margin-top: 1rem;
+    font-size: .8rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* mens section end */
 /* Responsive styles */
 @media screen and (max-width: 1440px) {
     .banner {

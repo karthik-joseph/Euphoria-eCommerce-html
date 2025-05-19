@@ -124,7 +124,42 @@
         });
     });
 
-        // scroll animation for the sections
+
+     // Get all category containers
+    const categoryContainers = document.querySelectorAll('.category-container');
+    
+    // Create an Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // If the element is in the viewport
+            if (entry.isIntersecting) {
+                // Add the animation class
+                entry.target.classList.add('animate');
+                // Stop observing the element after it's animated
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null, // viewport
+        threshold: 0.1, // 10% of the item visible
+        rootMargin: '0px 0px -50px 0px' // trigger a bit before the element enters the viewport
+    });
+    
+    // Start observing each category container
+    categoryContainers.forEach(container => {
+        observer.observe(container);
+    });
+    
+    // Fallback for browsers that don't support Intersection Observer
+    if (!('IntersectionObserver' in window)) {
+        categoryContainers.forEach((container, index) => {
+            setTimeout(() => {
+                container.classList.add('animate');
+            }, 100 * index); // Staggered timing based on index
+        });
+    }
+
+    // scroll animation for the sections
     const scrollAnimation = document.querySelectorAll('.scroll-animation');
 
 
