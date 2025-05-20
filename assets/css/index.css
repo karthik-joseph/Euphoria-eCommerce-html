@@ -817,11 +817,11 @@ header .header-styles .left .sections .menu-close-btn {
 }
 /* fashion end */
 
-/* mens section */
-#mens {
+/* mens, womens, limelight */
+#mens, #womens, #limelight {
     margin: 4rem 0;
 }
-#mens .mens-container h2 {
+#mens .mens-container h2, #womens .womens-container h2, #limelight .limelight-container h2 {
     font-size: 2rem;
     font-weight: 800;
     color: var(--link-dark-color);
@@ -829,7 +829,7 @@ header .header-styles .left .sections .menu-close-btn {
     display: flex;
     align-items: center;
 }
-#mens .mens-container h2::before {
+#mens .mens-container h2::before, #womens .womens-container h2::before, #limelight .limelight-container h2::before {
     content: "";
     display: inline-block;
     width: 6px;
@@ -838,14 +838,14 @@ header .header-styles .left .sections .menu-close-btn {
     border-radius: 5px;
     margin-right: 1rem;
 }
-#mens .mens-container .categories {
+#mens .mens-container .categories, #womens .womens-container .categories, #limelight .limelight-container .categories {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 30px;
 }
-#mens .mens-container .categories .category-container {
+#mens .mens-container .categories .category-container, #womens .womens-container .categories .category-container, #limelight .limelight-container .categories .category-container {
     flex: 1;
     min-width: 250px;
     max-width: 280px;  
@@ -857,45 +857,44 @@ header .header-styles .left .sections .menu-close-btn {
     transform-style: preserve-3d;
     backface-visibility: hidden;
     transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-                opacity 1s ease;
-            
+                opacity 1s ease;       
+    margin-bottom: 2rem;
 }
-#mens .mens-container .categories .category-container:nth-child(even) {
+#mens .mens-container .categories .category-container:nth-child(even), #womens .womens-container .categories .category-container:nth-child(even), #limelight .limelight-container .categories .category-container:nth-child(even) {
     transform: rotateY(90deg);
     transform-origin: right center;
 }
 
 
 /* Active state when animation should run */
-#mens .mens-container .categories .category-container.animate {
+#mens .mens-container .categories .category-container.animate, #womens .womens-container .categories .category-container.animate, #limelight .limelight-container .categories .category-container.animate {
     opacity: 1;
     transform: rotateY(0);
 }
 
-/* Optional: Add some additional hover effects */
-#mens .mens-container .categories .category-container .img-container img {
+#mens .mens-container .categories .category-container .img-container img, #womens .womens-container .categories .category-container .img-container img, #limelight .limelight-container .categories .category-container .img-container img {
     transition: transform 0.5s ease;
 }
 
-#mens .mens-container .categories .category-container:hover .img-container img {
+
+#mens .mens-container .categories .category-container:hover .img-container img, #womens .womens-container .categories .category-container:hover .img-container img, #limelight .limelight-container .categories .category-container:hover .img-container img {
     transform: scale(1.05);
 }
 
-#mens .mens-container .categories .category-container .arrow {
+#mens .mens-container .categories .category-container .arrow,   #womens .womens-container .categories .category-container .arrow {
     transition: transform 0.3s ease;
 }
 
-#mens .mens-container .categories .category-container:hover .arrow {
+#mens .mens-container .categories .category-container:hover .arrow, #womens .womens-container .categories .category-container:hover .arrow {
     transform: translateX(5px);
 }
 
-/* Optional: Animation for the "Explore Now" link */
-#mens .mens-container .categories .explore-now {
+#mens .mens-container .categories .explore-now, #womens .womens-container .categories .explore-now {
     position: relative;
     display: inline-block;
 }
 
-#mens .mens-container .categories .explore-now::after {
+#mens .mens-container .categories .explore-now::after, #womens .womens-container .categories .explore-now::after {
     content: '';
     position: absolute;
     width: 0;
@@ -906,45 +905,45 @@ header .header-styles .left .sections .menu-close-btn {
     transition: width 0.3s ease;
 }
 
-#mens .mens-container .categories .category-container:hover .explore-now::after {
+#mens .mens-container .categories .category-container:hover .explore-now::after, #womens .womens-container .categories .category-container:hover .explore-now::after {
     width: 100%;
 }
 /*  */
-#mens .mens-container .categories .category-container:hover img {
+#mens .mens-container .categories .category-container:hover img, #womens .womens-container .categories .category-container:hover img, #limelight .limelight-container .categories .category-container:hover img {
     transform: scale(0.95);
     transition: transform 0.3s ease;
 }
 
-#mens .mens-container .categories .category-container .img-container {
+#mens .mens-container .categories .category-container .img-container, #womens .womens-container .categories .category-container .img-container, #limelight .limelight-container .categories .category-container .img-container {
     width: 100%;
     height: 400px;
     overflow: hidden;
     border-radius: 8px;
     margin-bottom: 1rem;
 }
-#mens .mens-container .categories .category-container .img-container img {
+#mens .mens-container .categories .category-container .img-container img, #womens .womens-container .categories .category-container .img-container img, #limelight .limelight-container .categories .category-container .img-container img {
     width: 100%;
     height: 100%;
     object-fit: fill;
     border-radius: 12px;
     transition: all 0.3s ease;
 }
-#mens .mens-container .categories .category-container .category-content {
+#mens .mens-container .categories .category-container .category-content, #womens .womens-container .categories .category-container .category-content, #limelight .limelight-container .categories .category-container .category-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: all 0.3s ease;
 }
-#mens .mens-container .categories .category-container .category-content h3 {
+#mens .mens-container .categories .category-container .category-content h3, #womens .womens-container .categories .category-container .category-content h3, #limelight .limelight-container .categories .category-container .category-content h3 {
     font-size: 1rem;
     font-weight: 600;
     color: var(--link-dark-color);
 }
-#mens .mens-container .categories .category-container:hover .category-content {
+#mens .mens-container .categories .category-container:hover .category-content, #womens .womens-container .categories .category-container:hover .category-content, #limelight .limelight-container .categories .category-container:hover .category-content {
     transform: translateY(-10px);
     transition: transform 0.3s ease;
 }
-#mens .mens-container .categories .category-container .category-content a.explore-now {
+#mens .mens-container .categories .category-container .category-content a.explore-now, #womens .womens-container .categories .category-container .category-content a.explore-now {
     background: none;
     border: none;
     margin-top: 1rem;
@@ -955,7 +954,43 @@ header .header-styles .left .sections .menu-close-btn {
     transition: all 0.3s ease;
 }
 
-/* mens section end */
+
+#limelight .limelight-container .categories .category-container .img-container {
+    margin-bottom: 2rem;
+}
+#limelight .limelight-container .categories .category-container .img-container div {
+    position:absolute;
+    z-index: 100;
+    top:10px;
+    right: 10px;
+    border-radius: 50%;
+    background: var(--white);
+    padding: .6rem;
+    transition: all 0.7s ease;
+}
+#limelight .limelight-container .categories .category-container .img-container div img {
+    width: 100%;
+    height: undefined;
+    aspect-ratio: 1;
+}
+#limelight .limelight-container .categories .category-container .category-content .left-section h3 {
+    margin-bottom: .6rem;
+}
+#limelight .limelight-container .categories .category-container .category-content .price {
+    padding: 0.5rem 1rem;
+    background: var(--shade-color);
+    border-radius: .5rem;
+    color: var(--link-dark-color);
+    box-shadow: 0 0 1px var(--link-dark-color);
+    transition: all 0.3s ease;
+}
+#limelight .limelight-container .categories .category-container .category-content .price:hover {
+    background: var(--link-dark-color);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+/* mens, womens, limelight(reusable codes) section end */
 /* Responsive styles */
 @media screen and (max-width: 1440px) {
     .banner {
@@ -1034,6 +1069,10 @@ header .header-styles .left .sections .menu-close-btn {
     #deals .deal-container .deal-section:last-child {
         margin-bottom: 0;
     }
+    #mens .mens-container h2, #womens .womens-container h2, #limelight .limelight-container h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2.8rem;
+    }
 }
 
 /* Tablet styles */
@@ -1047,6 +1086,10 @@ header .header-styles .left .sections .menu-close-btn {
     
     .banner .banner-content .banner-subtitle {
         font-size: 1.1rem;
+    }
+    #mens .mens-container h2, #womens .womens-container h2, #limelight .limelight-container h2 {
+        font-size: 1.6rem;
+        margin-bottom: 2.6rem;
     }
 }
 
@@ -1081,6 +1124,10 @@ header .header-styles .left .sections .menu-close-btn {
     }
     .banner .banner-content {
         padding: 30px;
+    }
+    #mens .mens-container h2, #womens .womens-container h2, #limelight .limelight-container h2 {
+        font-size: 1.4rem;
+        margin-bottom: 2.4rem;
     }
 }
 /* Big mobile styles */
@@ -1274,6 +1321,10 @@ header .header-styles .left .sections .menu-close-btn {
     #deals .deal-container .deal-section .deal-price {
         font-size: 1.5rem;
     }
+    #mens .mens-container h2, #womens .womens-container h2, #limelight .limelight-container h2 {
+        font-size: 1.3rem;
+        margin-bottom: 2.3rem;
+    }
 }
 
 /* Add hamburger menu functionality */
@@ -1426,6 +1477,10 @@ header .header-styles .left .sections .menu-close-btn {
         font-size: 1rem;
         padding: 10px 20px;
     }
+    #mens .mens-container h2, #womens .womens-container h2, #limelight .limelight-container h2 {
+        font-size: 1.2rem;
+        margin-bottom: 2.2rem;
+    }
 
 }
 
@@ -1510,7 +1565,10 @@ header .header-styles .left .sections .menu-close-btn {
         font-size: .7rem;
         padding: 10px 20px;
     }
-    
+    #mens .mens-container h2, #womens .womens-container h2, #limelight .limelight-container h2 {
+        font-size: 1.1rem;
+        margin-bottom: 2.1rem;
+    }
 }
 
 /* Additional improvements for accessibility */
