@@ -991,6 +991,64 @@ header .header-styles .left .sections .menu-close-btn {
 }
 
 /* mens, womens, limelight(reusable codes) section end */
+
+/* brand-deals */
+#brand-deals {
+    margin: 4rem 0;
+}
+#brand-deals .brand-deals-container {
+    text-align: center;
+    background: #3C4242;
+    padding: 2rem 3rem;
+    border-radius: .5rem;
+}
+#brand-deals .brand-deals-container .top {
+    color: #fff;
+    margin-bottom: 3rem;
+}
+#brand-deals .brand-deals-container .top h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+#brand-deals .brand-deals-container .top p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+#brand-deals .brand-deals-container .top p span {
+    font-weight: 700;
+    color: #FBD103;
+}
+#brand-deals .brand-deals-container .bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 2rem;
+}
+#brand-deals .brand-deals-container .bottom .brand {
+    max-width: 200px;
+    height: undefined;
+    aspect-ratio: 2/1;
+    border-radius: .5rem;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 1px #fff;
+    transition: all 0.3s ease;
+}
+#brand-deals .brand-deals-container .bottom .brand {
+    width: 100%;
+}
+#brand-deals .brand-deals-container .bottom .brand:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+/* brand-deals end */
+
 /* Responsive styles */
 @media screen and (max-width: 1440px) {
     .banner {
@@ -1389,6 +1447,13 @@ header .header-styles .left .sections .menu-close-btn {
         width: 4rem;
         height: .38rem;
     }
+    #brand-deals .brand-deals-container .top h1 {
+        font-size: 1.5rem;
+    }
+    #brand-deals .brand-deals-container .bottom .brand {
+        font-size: 1.2rem;
+        max-width: 150px;
+    }
 }
 
 /* Medium Mobile Styles */
@@ -1481,7 +1546,6 @@ header .header-styles .left .sections .menu-close-btn {
         font-size: 1.2rem;
         margin-bottom: 2.2rem;
     }
-
 }
 
 /* Small Mobile Style */
