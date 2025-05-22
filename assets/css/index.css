@@ -1305,19 +1305,19 @@ footer {
     padding: 40px 0 0 0;
 }
 
-.footer-container {
+footer .footer-container {
     display: flex;
     flex-direction: column;
 }
 
-.top {
+footer .footer-container .top {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
     margin-bottom: 40px;
 }
 
-.info-content h2 {
+footer .footer-container .top .info-content h2 {
     color: #ffffff;
     font-size: 22px;
     font-weight: 700;
@@ -1325,15 +1325,15 @@ footer {
     line-height: 1.3;
 }
 
-.info-content ul {
+footer .footer-container .top .info-content ul {
     list-style: none;
 }
 
-.info-content ul li {
+footer .footer-container .top .info-content ul li {
     margin-bottom: 12px;
 }
 
-.info-content ul li a {
+footer .footer-container .top .info-content ul li a {
     color: #b8bcc0;
     text-decoration: none;
     font-size: 16px;
@@ -1341,11 +1341,11 @@ footer {
     transition: color 0.3s ease;
 }
 
-.info-content ul li a:hover {
+footer .footer-container .top .info-content ul li a:hover {
     color: #ffffff;
 }
 
-.center {
+footer .footer-container .center {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -1354,13 +1354,13 @@ footer {
     border-bottom: 1px solid #5a5d61;
 }
 
-.social {
+footer .footer-container .center  .social {
     display: flex;
     gap: 15px;
     align-items: center;
 }
 
-.social a {
+footer .footer-container .center .social a {
     display: inline-block;
     width: 40px;
     height: 40px;
@@ -1372,42 +1372,42 @@ footer {
     transition: transform 0.3s ease;
 }
 
-.social a:hover {
+footer .footer-container .center  .social a:hover {
     transform: translateY(-2px);
 }
 
-.social a img {
+footer .footer-container .center  .social a img {
     width: 20px;
     height: 20px;
 }
 
-.download-app h3 {
+footer .footer-container .center  .download-app h3 {
     color: #ffffff;
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 15px;
 }
 
-.app-store {
+footer .footer-container .center .app-store {
     display: flex;
     gap: 15px;
 }
 
-.app-store a {
+footer .footer-container .center .app-store a {
     display: inline-block;
     transition: transform 0.3s ease;
 }
 
-.app-store a:hover {
+footer .footer-container .center .app-store a:hover {
     transform: translateY(-2px);
 }
 
-.app-store a img {
+footer .footer-container .center .app-store a img {
     height: 40px;
     width: auto;
 }
 
-.popular-categories {
+footer .footer-container .popular-categories {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1417,13 +1417,13 @@ footer {
     cursor: pointer;
 }
 
-.popular-categories h4 {
+footer .footer-container .popular-categories h4 {
     color: #ffffff;
     font-size: 18px;
     font-weight: 600;
 }
 
-.popular-categories img {
+footer .footer-container .popular-categories img {
     width: 16px;
     height: 16px;
     transition: transform 0.3s ease;
@@ -1431,12 +1431,12 @@ footer {
     margin-left: 10px;
 }
 
-.copyright {
+footer .footer-container .copyright {
     text-align: center;
     padding: 20px 0 30px 0;
 }
 
-.copyright p {
+footer .footer-container .copyright p {
     color: #b8bcc0;
     font-size: 14px;
     line-height: 1.5;
@@ -1444,42 +1444,42 @@ footer {
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .top {
+    footer .footer-container .top {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
     
-    .center {
+    footer .footer-container .center {
         flex-direction: column;
         gap: 30px;
         align-items: center;
         text-align: center;
     }
     
-    .info-content h2 {
+    footer .footer-container .info-content h2 {
         font-size: 20px;
     }
     
-    .info-content ul li a {
+    footer .footer-container .info-content ul li a {
         font-size: 15px;
     }
 }
 
 @media (max-width: 480px) {
-    .top {
+    footer .footer-container .top {
         grid-template-columns: 1fr;
         gap: 25px;
     }
     
-    .wrapper {
+    footer .wrapper {
         padding: 0 15px;
     }
     
-    .social {
+    footer .footer-container .social {
         justify-content: center;
     }
     
-    .app-store {
+    footer .footer-container .app-store {
         justify-content: center;
     }
     
