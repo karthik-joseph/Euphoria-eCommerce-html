@@ -4,6 +4,8 @@
 
 A modern, responsive eCommerce website built with HTML, CSS, and JavaScript featuring a clean design, smooth animations, and mobile-first approach.
 
+[Vist The Site](https://karthik-joseph.github.io/Euphoria-eCommerce-html/)
+
 ## 🚀 Features
 
 - **Responsive Design**: Mobile-first approach with seamless adaptation across all devices
