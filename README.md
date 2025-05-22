@@ -4,7 +4,13 @@
 
 A modern, responsive eCommerce website built with HTML, CSS, and JavaScript featuring a clean design, smooth animations, and mobile-first approach.
 
-[Vist The Site](https://karthik-joseph.github.io/Euphoria-eCommerce-html/)
+[Vist The Site]()
+
+## 🌐 Live Demo
+
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=github)](https://karthik-joseph.github.io/Euphoria-eCommerce-html/)
+
+**🔗 Quick Access:** <a href="https://YOUR_USERNAME.github.io/euphoria-ecommerce" target="_blank">Open Euphoria Website</a>
 
 ## 🚀 Features
 
